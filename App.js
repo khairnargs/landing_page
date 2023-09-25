@@ -1,15 +1,16 @@
 import React from 'react';
-import './App.css';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './nav/Nav';
 import Footer from './footer/Footer';
+import './App.css';
 import Home from './home';
 import About from './about';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <router>
-    <div className="App">
+    <Router>
+      <div className="App">
       <header className="App-header">
       <>
        <Nav/>
@@ -23,66 +24,20 @@ function App() {
           href="https://www.techox.co.in/#section-highlight"
           target="_blank"
           rel="noopener noreferrer"
-        
+          
         >
           Get Started
         </a>
         <Footer/>
-        <Home/>
-        <About/>
         </> 
-        </header>  
-        <Switch>
-        <Route path="./about">
-            <About />
-          </Route>
-          <Route path="./home">
-            <Home />
-          </Route>  
-          </Switch>
-    </div>
-
-    </router>
+        </header> 
+  <Routes>
+    <Route path=".\about.js" element={<About />} />
+    <Route path=".\home.js" element={<Home />} />
+  </Routes>
+  </div>
+ 
+  </Router>
   );
 }
-
 export default App;
-
-/*import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './home';
-import Nav from './nav/Nav';
-import Footer from './footer/Footer';
-
-
-
-function App() {
-  return (
-
-    <div className="App">
-      <header className="App-header">
-      <>
-       <Nav/>
-              <br></br><br></br><br></br>
-        <h1>Welcome to Techox LLP Internship Program</h1>
-        <p>Unlock Your Potential with Us!</p>
-               
-        <a
-          className="App-link"
-          href="https://www.techox.co.in/#section-highlight"
-          target="_blank"
-          rel="noopener noreferrer"
-        
-        >
-          Get Started
-        </a>
-        <Footer/>
-        </> 
-        
-      </header>     
-    </div>
-    
-  );
-}
-
-export default App;*/
